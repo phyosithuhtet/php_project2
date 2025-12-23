@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Products</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <section class="products">
+    <h1 class="heading">all products</h1>
+    <div class="box-container">
+      <form action="" method="POST" class="box">
+        <input type="hidden" name="product_id" value="<?= $fetch_product['id'];?>">
+        <img src="uploaded_files/<?= $fetch_product['image'];?>" alt="" class="image">
+        <h3 class="name"><?= $fetch_product['name'];?></h3>
+        <div class="flex">
+          <p class="price"><i class="fas fa-indian-rupee-sign"></i> <?= $fetch_product['price'];?></p>
+          <input type="number" name="qty" maxlength="2" min="1" value="1" max="99" required class="qty">
+        </div>
+        <a href="checkout.php?get_id=<?= $fetch_product['id'];?>" class="delete-btn">buy now</a>
+        <input type="submit" value="add to cart" name="add_product" class="btn">
+      </form>
+      <?php
+         }
+        } else {
+          echo '<p class="empty">no products found!</p>';
+        }
+      ?>
+    </div>
+  </section>
+</body>
+</html>
